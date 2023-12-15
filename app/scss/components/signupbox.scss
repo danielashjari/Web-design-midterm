@@ -1,1 +1,24 @@
 @use "../util" as *;
+
+.signup-box{
+    
+    form{
+        width: rem(300);
+        margin-left: rem(20);
+        label{
+            display: flex;
+            margin-top: rem(18);
+        }
+    
+        input{
+            width: 100%;
+            padding: rem(7);
+            border: rem(1) solid gray;
+            //change the color later into hsl
+            border-radius: rem(6);
+            outline: none;
+            
+        }
+        
+    }
+}

@@ -1,0 +1,18 @@
+.signup-box form {
+  width: 18.75rem;
+  margin-left: 1.25rem;
+}
+.signup-box form label {
+  display: flex;
+  margin-top: 1.125rem;
+}
+.signup-box form input {
+  width: 100%;
+  padding: 0.4375rem;
+  border: 0.0625rem solid gray;
+  border-radius: 0.375rem;
+  outline: none;
+}
+.signup-box form input::content {
+  background-color: hsl(64, 88%, 84%);
+}/*# sourceMappingURL=style.css.map */
