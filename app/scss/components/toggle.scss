@@ -1,0 +1,55 @@
+@use '../util' as *;
+
+.toggle{
+    .darkmode{
+        @include flex_box($direction:row-reverse);
+        color: var(--p);
+        font-size: 14px;
+        font-weight: 700;
+
+        .label{ //styling the label
+            width: rem(50);
+            height: rem(25);
+            border-radius: rem(30);
+            background: var(--toggle);
+            position: absolute;
+            cursor: pointer;
+            
+            &::before{ // to show a text before the toggle
+                content: 'Dark Mode';
+                position: absolute;
+                display: inline-block;
+                width: rem(75);
+                left: rem(-90);
+                top: rem(4); //Specifies how far an absolutely positioned box's top margin edge is offset below the top edge of the box's 'containing block'.
+            }
+            
+            &:hover{
+                background: var(--toggle-hvr);
+            }
+        }
+    }
+}
+
+
+//toggle animation which i don't get
+#checkbox:checked ~ .ball{
+    transform: translateX(rem(-25));
+}
+
+#checkbox {
+    display: none;
+}
+
+.ball{    
+    width: rem(18);
+    height: rem(18);
+    background-color: var(--bg);
+    position: absolute;
+    border-radius: 50%;
+    margin-top: -0.3px;
+    margin-right: 3px;
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
+    
+}

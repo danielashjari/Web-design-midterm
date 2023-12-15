@@ -21,6 +21,7 @@ h1, h2, h3, h6 {
 
 a, a:visited, a:active {
   text-decoration: none;
+  color: var(--p);
 }
 
 p {
@@ -29,15 +30,156 @@ p {
   margin-bottom: 0.5rem;
 }
 
+label {
+  color: var(--p);
+}
+
 :root {
-  --box-bg:hsl(180, 71%, 90%);
-  --bg:hsl(180, 58%, 95%);
-  --p:hsl(164, 25%, 12%);
-  --h:hsl(164, 25%, 12%);
-  --btn:hsl(180, 58%, 95%);
-  --btn-bg:hsl(39, 92%, 57%);
-  --btn-bg-hvr:hsl(18, 100%, 66%);
-  --border:hsl(0, 0%, 50%);
+  --box-bg: hsl(180, 71%, 90%);
+  --bg: hsl(180, 58%, 95%);
+  --hr: hsl(180, 64%, 84%);
+  --p: hsl(164, 25%, 12%);
+  --h: hsl(164, 25%, 12%);
+  --btn: hsl(180, 58%, 95%);
+  --btn-bg: hsl(39, 92%, 57%);
+  --btn-bg-hvr: hsl(18, 100%, 66%);
+  --border: hsl(0, 0%, 50%);
+  --toggle: hsl(39, 92%, 57%);
+  --toggle-hvr: hsl(166, 86%, 6%);
+}
+
+[data-theme=dark] {
+  --box-bg: hsl(164, 25%, 12%);
+  --bg:hsl(166, 26%, 19%) ;
+  --hr: hsl(164, 25%, 12%);
+  --p: hsl(34, 89%, 83%);
+  --h: hsl(34, 89%, 83%);
+  --btn: hsl(180, 58%, 95%);
+  --btn-bg: hsl(39, 92%, 57%);
+  --btn-bg-hvr: hsl(18, 100%, 66%);
+  --border: hsl(0, 0%, 50%);
+  --toggle-hvr: hsl(39, 92%, 57%);
+  --toggle: hsl(166, 86%, 6%);
+}
+
+@media (prefres-color-scheme: dark) {
+  :root {
+    --box-bg: ;
+    --bg: ;
+    --hr: ;
+    --p: ;
+    --h: ;
+    --btn: hsl(180, 58%, 95%);
+    --btn-bg: hsl(39, 92%, 57%);
+    --btn-bg-hvr: hsl(18, 100%, 66%);
+    --border: hsl(0, 0%, 50%);
+    --toggle-hvr: hsl(39, 92%, 57%);
+    --toggle: hsl(166, 86%, 6%);
+  }
+  [data-theme=light] {
+    --box-bg: hsl(180, 71%, 90%);
+    --bg: hsl(180, 58%, 95%);
+    --hr: hsl(180, 64%, 84%);
+    --p: hsl(164, 25%, 12%);
+    --h: hsl(164, 25%, 12%);
+    --btn: hsl(180, 58%, 95%);
+    --btn-bg: hsl(39, 92%, 57%);
+    --btn-bg-hvr: hsl(18, 100%, 66%);
+    --border: hsl(0, 0%, 50%);
+    --toggle: hsl(39, 92%, 57%);
+    --toggle-hvr: hsl(166, 86%, 6%);
+  }
+}
+header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 2.5rem 10rem;
+  border-bottom-left-radius: 1.875rem;
+  border-bottom-right-radius: 1.875rem;
+}
+@media (max-width: 39.9375em) {
+  header {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 2.5rem 1.5625rem;
+  }
+}
+@media (max-width: 63.9375em) {
+  header {
+    padding: 2.5rem;
+  }
+}
+header .header p {
+  margin-top: 0;
+}
+header .divider {
+  visibility: hidden;
+}
+@media (max-width: 39.9375em) {
+  header .divider {
+    visibility: visible;
+    background-color: var(--hr);
+    height: 2px;
+    width: 100%;
+    display: block;
+    border: 0;
+    margin: 1rem 0 1.125rem 0;
+    padding: 0;
+  }
+}
+
+.toggle .darkmode {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: nowrap;
+  justify-content: justify content;
+  align-items: center;
+  color: var(--p);
+  font-size: 14px;
+  font-weight: 700;
+}
+.toggle .darkmode .label {
+  width: 3.125rem;
+  height: 1.5625rem;
+  border-radius: 1.875rem;
+  background: var(--toggle);
+  position: absolute;
+  cursor: pointer;
+}
+.toggle .darkmode .label::before {
+  content: "Dark Mode";
+  position: absolute;
+  display: inline-block;
+  width: 4.6875rem;
+  left: -5.625rem;
+  top: 0.25rem;
+}
+.toggle .darkmode .label:hover {
+  background: var(--toggle-hvr);
+}
+
+#checkbox:checked ~ .ball {
+  transform: translateX(-1.5625rem);
+}
+
+#checkbox {
+  display: none;
+}
+
+.ball {
+  width: 1.125rem;
+  height: 1.125rem;
+  background-color: var(--bg);
+  position: absolute;
+  border-radius: 50%;
+  margin-top: -0.3px;
+  margin-right: 3px;
+  cursor: pointer;
+  transition: all 250ms ease-in-out;
 }
 
 .box {

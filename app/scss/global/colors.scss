@@ -1,10 +1,57 @@
-:root{
-    --box-bg:hsl(180, 71%, 90%);
-    --bg:hsl(180, 58%, 95%);
-    --p:hsl(164, 25%, 12%);
-    --h:hsl(164, 25%, 12%);
-    --btn:hsl(180, 58%, 95%);
-    --btn-bg:hsl(39, 92%, 57%);
-    --btn-bg-hvr:hsl(18, 100%, 66%);
-    --border:hsl(0, 0%, 50%);
+:root {
+    --box-bg: hsl(180, 71%, 90%);
+    --bg: hsl(180, 58%, 95%);
+    --hr: hsl(180, 64%, 84%);
+    --p: hsl(164, 25%, 12%);
+    --h: hsl(164, 25%, 12%);
+    --btn: hsl(180, 58%, 95%);
+    --btn-bg: hsl(39, 92%, 57%);
+    --btn-bg-hvr: hsl(18, 100%, 66%);
+    --border: hsl(0, 0%, 50%);
+    --toggle: hsl(39, 92%, 57%);
+    --toggle-hvr: hsl(166, 86%, 6%);
+}
+
+[data-theme="dark"] {
+    --box-bg: hsl(164, 25%, 12%);
+    --bg:hsl(166, 26%, 19%) ;
+    --hr: hsl(164, 25%, 12%);
+    --p: hsl(34, 89%, 83%);
+    --h: hsl(34, 89%, 83%);
+    --btn: hsl(180, 58%, 95%);
+    --btn-bg: hsl(39, 92%, 57%);
+    --btn-bg-hvr: hsl(18, 100%, 66%);
+    --border: hsl(0, 0%, 50%);
+    --toggle-hvr: hsl(39, 92%, 57%);
+    --toggle: hsl(166, 86%, 6%);
+}
+
+@media (prefres-color-scheme: dark) {
+    :root {
+        --box-bg: ;
+        --bg: ;
+        --hr: ;
+        --p: ;
+        --h: ;
+        --btn: hsl(180, 58%, 95%);
+        --btn-bg: hsl(39, 92%, 57%);
+        --btn-bg-hvr: hsl(18, 100%, 66%);
+        --border: hsl(0, 0%, 50%);
+        --toggle-hvr: hsl(39, 92%, 57%);
+        --toggle: hsl(166, 86%, 6%);
+    }
+
+    [data-theme="light"] {
+        --box-bg: hsl(180, 71%, 90%);
+        --bg: hsl(180, 58%, 95%);
+        --hr: hsl(180, 64%, 84%);
+        --p: hsl(164, 25%, 12%);
+        --h: hsl(164, 25%, 12%);
+        --btn: hsl(180, 58%, 95%);
+        --btn-bg: hsl(39, 92%, 57%);
+        --btn-bg-hvr: hsl(18, 100%, 66%);
+        --border: hsl(0, 0%, 50%);
+        --toggle: hsl(39, 92%, 57%);
+        --toggle-hvr: hsl(166, 86%, 6%);
+    }
 }
